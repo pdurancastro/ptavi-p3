@@ -31,6 +31,18 @@ class SmallSMILHandler(ContentHandler):
             self.tags.append(roottag)
             #print(self.tags)
 
+        elif name == 'region':
+            self.id = attrs.get('id',"")
+            self.top = attrs.get('top',"")
+            self.bottom = attrs.get('bottom',"")
+            self.left = attrs.get('left',"")
+            self.right = attrs.get('rigth',"")
+            att={'id': self.id, 'top': self.top, 'bottom': self.bottom,
+                'left': self.left, 'right': self.right}
+            rootag={'region':att}
+            self.tags.append(rootag)
+            print(self.tags)
+
 
 
 
