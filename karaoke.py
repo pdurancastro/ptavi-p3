@@ -7,6 +7,7 @@ from xml.sax.handler import ContentHandler
 import sys
 import smallsmilhandler
 import json
+import urllib.request
 
 
 
@@ -31,10 +32,16 @@ if __name__ == "__main__":
                 newatt= newatt + '\t' + att + "=" + value + '\t'
         print (tag + newatt + '\n')
         
-    json.dumps(mytags, open('karaoke.json'))
+   
+    #Pasar mi karaoke SMIL a JSON
+    var_json = sys.argv[1][:-4]+"json"
+    json.dump(mytags,open (var_json, 'w'))
     
-            
     
+    
+    #EJ 5
+    #local_filename, headers = urllib.request.urlretrieve('http://www.content-networking.com/smil/')
+    #html = open(local_filename)
     
     
 
