@@ -49,8 +49,11 @@ if __name__ == "__main__":
         for tag in Lista:
             for att, value in Lista[tag].items():
                 if 'src' in att:
-                    variable = att['src']    
-                    #if variable[:4] == "http":
+                    if value[:4] == "http":  
+                        print(value)                                         
+                        urllib.request.urlretrieve(value,value.split('/')[-1])
+                        
+                  
                         
     
     
