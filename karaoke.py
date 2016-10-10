@@ -39,9 +39,19 @@ if __name__ == "__main__":
     
     
     
+    
     #EJ 5
     #local_filename, headers = urllib.request.urlretrieve('http://www.content-networking.com/smil/')
     #html = open(local_filename)
+    
+    
+    for Lista in mytags:
+        for tag in Lista:
+            for att, value in Lista[tag].items():
+                if 'src' in att:
+                    variable = att['src']    
+                    #if variable[:4] == "http":
+                        
     
     
 
